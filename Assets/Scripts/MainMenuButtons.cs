@@ -11,6 +11,7 @@ public class MainMenuButtons : MonoBehaviour
 	{
 		SceneManager.LoadScene ("Building A F1&F2");
 	}
+	//For the continue button we would need var's of all important info or make a scene that acts as a saved info scene. Depends on solution
 
 	public void ExitGameB ()
 	{
