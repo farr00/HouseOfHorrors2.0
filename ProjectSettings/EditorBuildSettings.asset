@@ -4,4 +4,37 @@
 EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
-  m_Scenes: []
+  m_Scenes:
+  - enabled: 1
+    path: Assets/Scene/Buiding B&D Scene's/Building B&D.unity
+    guid: 69f1e9f40d3a518479b00cd674079002
+  - enabled: 1
+    path: Assets/Scene/Buiding B&D Scene's/Building B&D B1.unity
+    guid: 44e8f27ff38b05a4d9cfa26d63dac787
+  - enabled: 1
+    path: Assets/Scene/Buidling D Scene's/Building D B2.unity
+    guid: a2bd2ea9f3de79b47959251913548078
+  - enabled: 1
+    path: Assets/Scene/Buidling D Scene's/Building D F1.unity
+    guid: e3aab1c8bae28fb48ba3012048057d7f
+  - enabled: 1
+    path: Assets/Scene/Building A Scene's/Building A F1&F2.unity
+    guid: 017a68b9ccfac4a479d44008a7e18a16
+  - enabled: 1
+    path: Assets/Scene/Building A Scene's/Building A F3.unity
+    guid: f35c824c66ac25a4f8b8ef404951b3c9
+  - enabled: 1
+    path: Assets/Scene/Building A Scene's/Building A F4.unity
+    guid: afeb9fb6c6245fe47b5e2dbdace05287
+  - enabled: 1
+    path: Assets/Scene/Building B Scene's/Building B F1.unity
+    guid: 0357e5998e0a05f4e8953a9f284d1af4
+  - enabled: 1
+    path: Assets/Scene/Building B Scene's/Building B F2.unity
+    guid: 22d5307213105bc419024c7f396be142
+  - enabled: 1
+    path: Assets/Scene/Building B Scene's/Building B F3.unity
+    guid: 103f432b9bc67c84e89c5ebc5a079049
+  - enabled: 1
+    path: Assets/Scene/Main Menu Scene.unity
+    guid: 57521ac8c9c8fb249856de5ab5856102
