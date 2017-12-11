@@ -16,7 +16,8 @@ public class Crouch : MonoBehaviour
 	{
 		if (Input.GetKey (KeyCode.LeftControl)) {
 			characterCollider.height = 1.0f;
-		} else {
+			//Mathf.SmoothDamp
+		} else if (!Physics.SphereCast(new Ray(transform.position,Vector3.up),characterCollider.radius,characterCollider.height+0.7f)){
 			characterCollider.height = 1.8f;
 		}
 	}
