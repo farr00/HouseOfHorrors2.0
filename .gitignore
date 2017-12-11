@@ -4,8 +4,7 @@
 [Bb]uild/
 [Bb]uilds/
 Assets/AssetStoreTools*
-Assets/Scene/[Ll]ocal.unity
-Assets/Scene/[Ll]ocal.unity.meta
+[Ll]ocal.*
 
 # Visual Studio 2015 cache directory
 /.vs/
