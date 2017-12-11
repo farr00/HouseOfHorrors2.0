@@ -9,6 +9,7 @@ GameObject:
   m_Component:
   - component: {fileID: 400000}
   - component: {fileID: 14300000}
+  - component: {fileID: 114820898593083108}
   - component: {fileID: 11400000}
   - component: {fileID: 8200000}
   - component: {fileID: 136071728217482288}
@@ -324,6 +325,17 @@ Prefab:
   m_ParentPrefab: {fileID: 0}
   m_RootGameObject: {fileID: 100000}
   m_IsPrefabParent: 1
+--- !u!114 &114820898593083108
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 100000}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ebaaacb96c80b8e4baabe6efcecf921d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!136 &136071728217482288
 CapsuleCollider:
   m_ObjectHideFlags: 1
