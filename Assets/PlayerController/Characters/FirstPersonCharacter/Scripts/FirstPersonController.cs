@@ -11,7 +11,8 @@ namespace UnityStandardAssets.Characters.FirstPerson
     public class FirstPersonController : MonoBehaviour
     {
         [SerializeField] private bool m_IsWalking;
-		[SerializeField] private bool m_IsCrouching;
+		[SerializeField] public bool m_IsCrouching;
+		public bool IsUnderDesk;
         [SerializeField] private float m_WalkSpeed;
         [SerializeField] private float m_RunSpeed;
 		[SerializeField] private float m_CrouchSpeed;
@@ -117,7 +118,7 @@ namespace UnityStandardAssets.Characters.FirstPerson
             {
                 m_MoveDir.y = -m_StickToGroundForce;
 
-                if (m_Jump)
+				if (m_Jump & !m_IsCrouching)
                 {
                     m_MoveDir.y = m_JumpSpeed;
                     PlayJumpSound();
@@ -208,7 +209,7 @@ namespace UnityStandardAssets.Characters.FirstPerson
 			if (m_IsCrouching) {
 				m_CharacterController.height = .2f;
 				m_CrouchY = Mathf.SmoothDamp (m_CrouchY, -.4f, ref m_CrouchVelocity, .1f);
-			}else if (!Physics.SphereCast(new Ray(transform.position, Vector3.up), m_CharacterController.radius, 1.35f)) {
+			}else {
 				m_CharacterController.height = 1.8f;
 				m_CrouchY = Mathf.SmoothDamp (m_CrouchY, 0, ref m_CrouchVelocity, .1f);
 			
@@ -232,13 +233,26 @@ namespace UnityStandardAssets.Characters.FirstPerson
             // On standalone builds, walk/run speed is modified by a key press.
             // keep track of whether or not the character is walking or running
 
+
 			m_IsCrouching = Input.GetKey(KeyCode.C);
+			if (Physics.SphereCast(new Ray(transform.position, Vector3.up), m_CharacterController.radius, 1.35f)){
+				m_IsCrouching = true;
+				IsUnderDesk = true;
+			}else{
+				IsUnderDesk = false;
+			}
+
 			print(m_IsCrouching);
 
-            m_IsWalking = !Input.GetKey(KeyCode.LeftShift);
+			m_IsWalking = true;
+			if (!m_IsCrouching){
+				m_IsWalking = !Input.GetKey(KeyCode.LeftShift);
+			}
+            
 #endif
             // set the desired speed to be walking or running
             speed = m_IsWalking ? m_WalkSpeed : m_RunSpeed;
+			speed = m_IsCrouching ? m_CrouchSpeed : speed;
             m_Input = new Vector2(horizontal, vertical);
 
             // normalize input if it exceeds 1 in combined length:
