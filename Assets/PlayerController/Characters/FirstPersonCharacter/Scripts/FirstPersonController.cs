@@ -242,8 +242,6 @@ namespace UnityStandardAssets.Characters.FirstPerson
 				IsUnderDesk = false;
 			}
 
-			print(m_IsCrouching);
-
 			m_IsWalking = true;
 			if (!m_IsCrouching){
 				m_IsWalking = !Input.GetKey(KeyCode.LeftShift);
