@@ -15,7 +15,7 @@ public class Crouch : MonoBehaviour
 	void Update ()
 	{
 		if (Input.GetKey (KeyCode.LeftControl)) {
-			characterCollider.height = 1.0f;
+			characterCollider.height = .5f;
 		} else {
 			characterCollider.height = 1.8f;
 		}
