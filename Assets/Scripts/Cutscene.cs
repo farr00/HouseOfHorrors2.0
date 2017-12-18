@@ -11,7 +11,7 @@ public class Cutscene : MonoBehaviour
 	public Camera deathCam;
 	float speed = 5;
 	bool active;
-
+	public Light myLight;
 
 	void Start ()
 	{
@@ -32,7 +32,7 @@ public class Cutscene : MonoBehaviour
 
 	public void Attacked ()
 	{
-		print ("OK LO LXD");
+		print ("rawr XD");
 		controller.enabled = false;
 		active = true;
 		StartCoroutine (HitCam ());
@@ -40,6 +40,7 @@ public class Cutscene : MonoBehaviour
 
 	void Look (Vector3 target)
 	{
+		myLight.spotAngle = 90;
 		Vector3 targetDir = target - (transform.position + new Vector3 (0, .5f));
 		//targetDir.y = 0.0f;
 		transform.rotation = Quaternion.RotateTowards (transform.rotation, Quaternion.LookRotation (targetDir), Time.time * speed);
