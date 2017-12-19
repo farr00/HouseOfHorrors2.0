@@ -32,6 +32,7 @@ public class Cutscene : MonoBehaviour
 
 	public void Attacked ()
 	{
+		//myLight.spotAngle = 90;
 		print ("rawr XD");
 		controller.enabled = false;
 		active = true;
@@ -40,8 +41,8 @@ public class Cutscene : MonoBehaviour
 
 	void Look (Vector3 target)
 	{
-		myLight.spotAngle = 90;
-		Vector3 targetDir = target - (transform.position + new Vector3 (0, .5f));
+		
+		Vector3 targetDir = target - (transform.position + new Vector3 (0, .1f));
 		//targetDir.y = 0.0f;
 		transform.rotation = Quaternion.RotateTowards (transform.rotation, Quaternion.LookRotation (targetDir), Time.time * speed);
 	}
