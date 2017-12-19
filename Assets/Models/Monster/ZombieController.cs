@@ -124,8 +124,9 @@ public class ZombieController : MonoBehaviour {
 				goTo = player.transform.position;
 
 			}
-			if (currentState == "idle" && inSight) {
+			if (currentState == "walking" && inSight) {
 				agent.SetDestination (goTo);
+
 			}
 		}
 	}
@@ -134,9 +135,19 @@ public class ZombieController : MonoBehaviour {
 		if (currentState != "idle") {
 			agent.SetDestination (goTo);// Move to player if the state is not idle
 		}
-		if ((agent.remainingDistance  <= agent.stoppingDistance && inSight == false) || alive == false) {
-			SetState ("idle");
-		}else{
+		if (((agent.remainingDistance  <= agent.stoppingDistance && inSight == false) || alive == false) && !attacking) {
+			SetState ("walking");
+			agent.speed = walkSpeed;
+			Vector3 randomDirection = Random.insideUnitSphere * 100;
+
+			randomDirection += transform.position;
+			NavMeshHit hit;
+			NavMesh.SamplePosition(randomDirection, out hit, 100, 1);
+			goTo = hit.position;
+
+
+		}else if (inSight){
+			agent.speed = runSpeed;
 			SetState ("running");
 		}
 
