@@ -107,7 +107,7 @@ NavMeshSettings:
     manualTileSize: 0
     tileSize: 256
     accuratePlacement: 0
-  m_NavMeshData: {fileID: 23800000, guid: 7855ee220c0cd5e4b92396e5ab7891d4, type: 2}
+  m_NavMeshData: {fileID: 0}
 --- !u!1001 &24172934
 Prefab:
   m_ObjectHideFlags: 0
@@ -377,6 +377,11 @@ Prefab:
       propertyPath: monster
       value: 
       objectReference: {fileID: 1882851631}
+    - target: {fileID: 108917775337535394, guid: 5e9e851c0e142814dac026a256ba2ac0,
+        type: 2}
+      propertyPath: m_Intensity
+      value: 50
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 5e9e851c0e142814dac026a256ba2ac0, type: 2}
   m_IsPrefabParent: 0
