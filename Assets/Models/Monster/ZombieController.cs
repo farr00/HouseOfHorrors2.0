@@ -15,7 +15,7 @@ public class ZombieController : MonoBehaviour {
 	public float walkSpeed = 10f;
 	public float runSpeed = 5f;
 	public float damageRange = 2f;
-
+	//[SerializeField] private 
 	private AudioSource growl;
 
 	float touchedTime = 0;
@@ -26,6 +26,8 @@ public class ZombieController : MonoBehaviour {
 	Vector3 goTo;
 	bool inSight;
 	bool alive = true;
+	bool finding = false;
+	Vector3 randomDirection = Random.insideUnitSphere * Random.Range(1,500);
 
 	private Vector3 startPos;
 
@@ -132,18 +134,25 @@ public class ZombieController : MonoBehaviour {
 	}
 
 	void Update(){
+		if (finding) {
+			int amount = Random.Range (1, 500);
+			randomDirection = Random.insideUnitSphere * amount;
+			randomDirection += transform.position;
+			NavMeshHit hit;
+
+			if (NavMesh.SamplePosition (randomDirection, out hit, amount, 1)) {
+				finding = false;
+				print ("OK ITS NOT IN RANGE");
+				goTo = hit.position;
+			}
+		}
 		if (currentState != "idle") {
 			agent.SetDestination (goTo);// Move to player if the state is not idle
 		}
 		if (((agent.remainingDistance  <= agent.stoppingDistance && inSight == false) || alive == false) && !attacking) {
 			SetState ("walking");
+			finding = true;
 			agent.speed = walkSpeed;
-			Vector3 randomDirection = Random.insideUnitSphere * 100;
-
-			randomDirection += transform.position;
-			NavMeshHit hit;
-			NavMesh.SamplePosition(randomDirection, out hit, 100, 1);
-			goTo = hit.position;
 
 
 		}else if (inSight){
@@ -151,7 +160,6 @@ public class ZombieController : MonoBehaviour {
 			SetState ("running");
 		}
 
-
-	}
+			}
 
 }
