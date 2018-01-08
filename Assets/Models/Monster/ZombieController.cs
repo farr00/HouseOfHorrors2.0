@@ -149,16 +149,21 @@ public class ZombieController : MonoBehaviour {
 	}
 
 	void Update(){
+		print (Vector3.Distance(player.transform.position,goTo));
 		if (finding) {
-			randomDirection = Random.insideUnitSphere * wanderRange ;
+			randomDirection = Random.insideUnitSphere * wanderRange;
 			randomDirection += player.transform.position;
-		NavMeshHit hit;
-		if (NavMesh.SamplePosition (randomDirection, out hit, 20, 1)) {
-			finding = false;
-			goTo = hit.position;
+			NavMeshHit hit;
+			if (NavMesh.SamplePosition (randomDirection, out hit, 20, 1)) {
+				finding = false;
+				goTo = hit.position;
 			}
-			
 		}
+
+			if (Vector3.Distance (player.transform.position, goTo) > wanderRange) {
+				finding = true;
+			}
+		
 		if (currentState != "idle") {
 			agent.SetDestination (goTo);// Move to player if the state is not idle
 		}
