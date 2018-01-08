@@ -16,6 +16,7 @@ public class ZombieController : MonoBehaviour {
 	public float walkSpeed = 10f;
 	public float runSpeed = 5f;
 	public float damageRange = 2f;
+	public float wanderRange;
 	private AudioSource growl;
 
 	float touchedTime = 0;
@@ -27,9 +28,7 @@ public class ZombieController : MonoBehaviour {
 	bool inSight;
 	bool alive = true;
 	bool finding = false;
-	//Vector3 randomDirection = Random.insideUnitSphere * Random.Range(1,500);
-
-	private Vector3 startPos;
+	Vector3 randomDirection;
 
 	UnityStandardAssets.Characters.FirstPerson.FirstPersonController playerController;
 
@@ -60,12 +59,11 @@ public class ZombieController : MonoBehaviour {
 		playerController = player.GetComponent<UnityStandardAssets.Characters.FirstPerson.FirstPersonController> ();
 		growl = gameObject.GetComponent<AudioSource> ();
 		growl.Play ();
-		startPos = transform.position;
 		target = player.transform;
 		anim = GetComponent<Animator> ();
 		agent = GetComponent<NavMeshAgent> ();
 		if (hidespots.Count == 0) {
-			foreach (GameObject hidespot in GameObject.FindGameObjectsWithTag ("hspot")) {
+			foreach (GameObject hidespot in GameObject.FindGameObjectsWithTag ("hspo3t")) {
 				hidespots.Add (hidespot);
 			}
 		}
@@ -107,13 +105,22 @@ public class ZombieController : MonoBehaviour {
 	// When theres a collision run this
 
 	void OnTriggerEnter(Collider c){
-		if (c.gameObject.CompareTag("Player") && Time.time > touchedTime && alive){ // Check tag to see if it can attack
-			attacking = true;
-			transform.LookAt (target);
-			touchedTime = Time.time + 2.63f;
+		RaycastHit hit;
+		int layerMask = 1 << LayerMask.NameToLayer ("Monster");
+		if (c.gameObject.CompareTag ("Player") && Time.time > touchedTime && alive && Physics.Linecast (transform.position, player.transform.position, out hit, ~layerMask)) {
+			print (hit.transform);
+		
 
-			anim.SetTrigger ("isAttacking");
-			StartCoroutine(Attack ());
+			if (hit.transform == player.transform) {
+				print ("OK PLZ RUN");
+				attacking = true;
+				transform.LookAt (target);
+				touchedTime = Time.time + 2.63f;
+				anim.SetTrigger (playerController.IsUnderDesk ? "isAttacking" : "isAttacking");
+				anim.SetTrigger ("isAttacking");
+				StartCoroutine (Attack ());
+			}// Check tag to see if it can attack
+			
 		}
 	}
 
@@ -144,18 +151,27 @@ public class ZombieController : MonoBehaviour {
 
 	void Update(){
 		if (finding) {
-			int amount = Random.Range (0, hidespots.Count);
-			goTo = hidespots [amount].transform.position;
-			finding = false;
-//			randomDirection = Random.insideUnitSphere * amount;
-//			randomDirection += transform.position;
-//			NavMeshHit hit;
-//
-//			if (NavMesh.SamplePosition (randomDirection, out hit, amount, 1)) {
-//				finding = false;
-//				print ("OK ITS NOT IN RANGE");
-//				goTo = hit.position;
-//			}
+			List<Transform> nearbyHidespots = new List<Transform> ();
+
+			foreach (GameObject pos in hidespots)
+				if (Vector3.Distance (target.position, pos.transform.position) < wanderRange)
+					nearbyHidespots.Add (pos.transform);
+
+			if (nearbyHidespots.Count == 0) {
+				randomDirection = Random.insideUnitSphere * 20;
+				randomDirection += transform.position;
+				NavMeshHit hit;
+				if (NavMesh.SamplePosition (randomDirection, out hit, 20, 1)) {
+					finding = false;
+					goTo = hit.position;
+				}
+			} else {
+				finding = false;
+				int amount = Random.Range (0, nearbyHidespots.Count);
+				goTo = nearbyHidespots [amount].position;
+			}
+
+
 		}
 		if (currentState != "idle") {
 			agent.SetDestination (goTo);// Move to player if the state is not idle
@@ -173,6 +189,6 @@ public class ZombieController : MonoBehaviour {
 			SetState ("running");
 		}
 
-			}
+	}
 
 }
