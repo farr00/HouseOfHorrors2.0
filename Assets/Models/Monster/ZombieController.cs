@@ -9,7 +9,7 @@ public class ZombieController : MonoBehaviour {
 
 	private Animator anim;
 	public GameObject player;
-	public List<GameObject> hidespots = new List<GameObject>();
+	//public List<GameObject> hidespots = new List<GameObject>();
 	private Transform target;
 	private NavMeshAgent agent;
 
@@ -54,7 +54,7 @@ public class ZombieController : MonoBehaviour {
 	// When the game begings load these components and set variables
 
 	void Start(){
-		print (hidespots);
+		//print (hidespots);
 		goTo = transform.position;
 		playerController = player.GetComponent<UnityStandardAssets.Characters.FirstPerson.FirstPersonController> ();
 		growl = gameObject.GetComponent<AudioSource> ();
@@ -62,12 +62,11 @@ public class ZombieController : MonoBehaviour {
 		target = player.transform;
 		anim = GetComponent<Animator> ();
 		agent = GetComponent<NavMeshAgent> ();
-		if (hidespots.Count == 0) {
-			foreach (GameObject hidespot in GameObject.FindGameObjectsWithTag ("hspo3t")) {
-				hidespots.Add (hidespot);
-			}
+//		if (hidespots.Count == 0) {
+//			foreach (GameObject hidespot in GameObject.FindGameObjectsWithTag ("hspot")) {
+//				hidespots.Add (hidespot);
+//			}
 		}
-	}
 
 	// Attack the player when this is called
 
@@ -151,27 +150,14 @@ public class ZombieController : MonoBehaviour {
 
 	void Update(){
 		if (finding) {
-			List<Transform> nearbyHidespots = new List<Transform> ();
-
-			foreach (GameObject pos in hidespots)
-				if (Vector3.Distance (target.position, pos.transform.position) < wanderRange)
-					nearbyHidespots.Add (pos.transform);
-
-			if (nearbyHidespots.Count == 0) {
-				randomDirection = Random.insideUnitSphere * 20;
-				randomDirection += transform.position;
-				NavMeshHit hit;
-				if (NavMesh.SamplePosition (randomDirection, out hit, 20, 1)) {
-					finding = false;
-					goTo = hit.position;
-				}
-			} else {
-				finding = false;
-				int amount = Random.Range (0, nearbyHidespots.Count);
-				goTo = nearbyHidespots [amount].position;
+			randomDirection = Random.insideUnitSphere * wanderRange ;
+			randomDirection += player.transform.position;
+		NavMeshHit hit;
+		if (NavMesh.SamplePosition (randomDirection, out hit, 20, 1)) {
+			finding = false;
+			goTo = hit.position;
 			}
-
-
+			
 		}
 		if (currentState != "idle") {
 			agent.SetDestination (goTo);// Move to player if the state is not idle
