@@ -2338,7 +2338,7 @@ MonoBehaviour:
   walkSpeed: 1.5
   runSpeed: 5
   damageRange: 2
-  wanderRange: 20
+  wanderRange: 10
 --- !u!122 &122685562953508580
 Halo:
   m_ObjectHideFlags: 1
