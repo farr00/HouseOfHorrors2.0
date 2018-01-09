@@ -154,3 +154,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   player: {fileID: 0}
   minUsed: 5
+  monster: {fileID: 0}
