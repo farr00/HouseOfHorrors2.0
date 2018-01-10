@@ -9,13 +9,14 @@ public class ZombieController : MonoBehaviour {
 
 	private Animator anim;
 	public GameObject player;
+	//public List<GameObject> hidespots = new List<GameObject>();
 	private Transform target;
 	private NavMeshAgent agent;
 
 	public float walkSpeed = 10f;
 	public float runSpeed = 5f;
 	public float damageRange = 2f;
-
+	public float wanderRange;
 	private AudioSource growl;
 
 	float touchedTime = 0;
@@ -26,8 +27,8 @@ public class ZombieController : MonoBehaviour {
 	Vector3 goTo;
 	bool inSight;
 	bool alive = true;
-
-	private Vector3 startPos;
+	bool finding = false;
+	Vector3 randomDirection;
 
 	UnityStandardAssets.Characters.FirstPerson.FirstPersonController playerController;
 
@@ -53,15 +54,19 @@ public class ZombieController : MonoBehaviour {
 	// When the game begings load these components and set variables
 
 	void Start(){
+		//print (hidespots);
 		goTo = transform.position;
 		playerController = player.GetComponent<UnityStandardAssets.Characters.FirstPerson.FirstPersonController> ();
 		growl = gameObject.GetComponent<AudioSource> ();
 		growl.Play ();
-		startPos = transform.position;
 		target = player.transform;
 		anim = GetComponent<Animator> ();
 		agent = GetComponent<NavMeshAgent> ();
-	}
+//		if (hidespots.Count == 0) {
+//			foreach (GameObject hidespot in GameObject.FindGameObjectsWithTag ("hspot")) {
+//				hidespots.Add (hidespot);
+//			}
+		}
 
 	// Attack the player when this is called
 
@@ -99,23 +104,35 @@ public class ZombieController : MonoBehaviour {
 	// When theres a collision run this
 
 	void OnTriggerEnter(Collider c){
-		if (c.gameObject.CompareTag("Player") && Time.time > touchedTime && alive){ // Check tag to see if it can attack
-			attacking = true;
-			transform.LookAt (target);
-			touchedTime = Time.time + 2.63f;
+		RaycastHit hit;
+		int layerMask = 1 << LayerMask.NameToLayer ("Monster");
+		if (c.gameObject.CompareTag ("Player") && Time.time > touchedTime && alive && Physics.Linecast (transform.position, player.transform.position, out hit, ~layerMask)) {
+			print (hit.transform);
+		
 
-			anim.SetTrigger ("isAttacking");
-			StartCoroutine(Attack ());
+			if (hit.transform == player.transform) {
+				print ("OK PLZ RUN");
+				attacking = true;
+				transform.LookAt (target);
+				touchedTime = Time.time + 2.63f;
+				anim.SetTrigger (playerController.IsUnderDesk ? "isAttacking" : "isAttacking");
+				anim.SetTrigger ("isAttacking");
+				StartCoroutine (Attack ());
+			}// Check tag to see if it can attack
+			
 		}
 	}
 
 	// Every frame do this
 
 	void FixedUpdate(){
+		//if (desks.Count == 0) {
+		//	desks = GameObject.FindGameObjectsWithTag ("Desk");
+		//}
 		RaycastHit hit;
 		int layerMask = 1 << LayerMask.NameToLayer("Monster");
 		if (Physics.Linecast(transform.position, player.transform.position, out hit, ~layerMask)){
-			print (hit.transform);
+			//print (hit.transform);
 			if (hit.transform == player.transform && alive && !(playerController.IsUnderDesk && !inSight)) {
 				goTo = player.transform.position;
 				inSight = true;
@@ -132,25 +149,36 @@ public class ZombieController : MonoBehaviour {
 	}
 
 	void Update(){
+		print (Vector3.Distance(player.transform.position,goTo));
+		if (finding) {
+			randomDirection = Random.insideUnitSphere * wanderRange;
+			randomDirection += player.transform.position;
+			NavMeshHit hit;
+			if (NavMesh.SamplePosition (randomDirection, out hit, 20, 1)) {
+				finding = false;
+				goTo = hit.position;
+			}
+		}
+
+			if (Vector3.Distance (player.transform.position, goTo) > wanderRange) {
+				finding = true;
+			}
+		
 		if (currentState != "idle") {
 			agent.SetDestination (goTo);// Move to player if the state is not idle
 		}
 		if (((agent.remainingDistance  <= agent.stoppingDistance && inSight == false) || alive == false) && !attacking) {
 			SetState ("walking");
+			if (Vector3.Distance (transform.position, agent.destination) < 1.5f) {
+				finding = true;
+			}
 			agent.speed = walkSpeed;
-			Vector3 randomDirection = Random.insideUnitSphere * 100;
-
-			randomDirection += transform.position;
-			NavMeshHit hit;
-			NavMesh.SamplePosition(randomDirection, out hit, 100, 1);
-			goTo = hit.position;
 
 
 		}else if (inSight){
 			agent.speed = runSpeed;
 			SetState ("running");
 		}
-
 
 	}
 
