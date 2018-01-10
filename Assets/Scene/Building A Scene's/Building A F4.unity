@@ -2783,7 +2783,7 @@ Transform:
   - {fileID: 1005706577}
   - {fileID: 1783327304}
   m_Father: {fileID: 2007495482}
-  m_RootOrder: 34
+  m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 180.26299, z: 0}
 --- !u!1001 &328434493
 Prefab:
@@ -5999,7 +5999,7 @@ Prefab:
     m_Modifications:
     - target: {fileID: 400000, guid: 5e9e851c0e142814dac026a256ba2ac0, type: 2}
       propertyPath: m_LocalPosition.x
-      value: -15.27
+      value: -20.33
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 5e9e851c0e142814dac026a256ba2ac0, type: 2}
       propertyPath: m_LocalPosition.y
@@ -6007,7 +6007,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 5e9e851c0e142814dac026a256ba2ac0, type: 2}
       propertyPath: m_LocalPosition.z
-      value: -17.69
+      value: -15.36
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 5e9e851c0e142814dac026a256ba2ac0, type: 2}
       propertyPath: m_LocalRotation.x
@@ -9700,15 +9700,15 @@ Prefab:
       propertyPath: player
       value: 
       objectReference: {fileID: 1619047438}
-    - target: {fileID: 195896413879048910, guid: c6a8282e1ac8f5a45bd53085752dc0f2,
+    - target: {fileID: 136884296148702270, guid: c6a8282e1ac8f5a45bd53085752dc0f2,
         type: 2}
-      propertyPath: m_AngularSpeed
-      value: 240
+      propertyPath: m_Enabled
+      value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: 114141734048564320, guid: c6a8282e1ac8f5a45bd53085752dc0f2,
+    - target: {fileID: 136221238931809838, guid: c6a8282e1ac8f5a45bd53085752dc0f2,
         type: 2}
-      propertyPath: wanderRange
-      value: 20
+      propertyPath: m_Enabled
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: c6a8282e1ac8f5a45bd53085752dc0f2, type: 2}
@@ -20199,6 +20199,7 @@ Transform:
   - {fileID: 1822861014}
   - {fileID: 1939715073}
   - {fileID: 827564529}
+  - {fileID: 323840676}
   - {fileID: 1180946802}
   - {fileID: 2040424621}
   - {fileID: 719818559}
@@ -20224,7 +20225,6 @@ Transform:
   - {fileID: 1027111041}
   - {fileID: 336175244}
   - {fileID: 128936147}
-  - {fileID: 323840676}
   - {fileID: 714122747}
   - {fileID: 2097840713}
   - {fileID: 1814029634}
