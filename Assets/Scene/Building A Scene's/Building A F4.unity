@@ -5083,6 +5083,16 @@ Prefab:
       propertyPath: monster
       value: 
       objectReference: {fileID: 1541880185}
+    - target: {fileID: 136071728217482288, guid: 5e9e851c0e142814dac026a256ba2ac0,
+        type: 2}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 136468207828445698, guid: 5e9e851c0e142814dac026a256ba2ac0,
+        type: 2}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 5e9e851c0e142814dac026a256ba2ac0, type: 2}
   m_IsPrefabParent: 0
@@ -8333,6 +8343,11 @@ Prefab:
         type: 2}
       propertyPath: wanderRange
       value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 136221238931809838, guid: c6a8282e1ac8f5a45bd53085752dc0f2,
+        type: 2}
+      propertyPath: m_Enabled
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: c6a8282e1ac8f5a45bd53085752dc0f2, type: 2}
