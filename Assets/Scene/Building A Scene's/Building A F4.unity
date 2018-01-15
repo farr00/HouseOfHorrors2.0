@@ -8338,6 +8338,11 @@ Prefab:
       propertyPath: player
       value: 
       objectReference: {fileID: 1619047438}
+    - target: {fileID: 114141734048564320, guid: c6a8282e1ac8f5a45bd53085752dc0f2,
+        type: 2}
+      propertyPath: wanderRange
+      value: 9
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: c6a8282e1ac8f5a45bd53085752dc0f2, type: 2}
   m_IsPrefabParent: 0
