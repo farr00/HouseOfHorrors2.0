@@ -3437,6 +3437,21 @@ MeshCollider:
   m_InflateMesh: 0
   m_SkinWidth: 0.01
   m_Mesh: {fileID: 4300000, guid: f15f68db2d9e392448cc481d905c9cef, type: 3}
+--- !u!208 &417048832
+NavMeshObstacle:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 417048829}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Shape: 1
+  m_Extents: {x: 0.32700002, y: 0.286, z: 0.28}
+  m_MoveThreshold: 0.1
+  m_Carve: 0
+  m_CarveOnlyStationary: 1
+  m_Center: {x: -0.10300001, y: 0, z: 0.18200001}
+  m_TimeToStationary: 0.5
 --- !u!1 &427954518 stripped
 GameObject:
   m_PrefabParentObject: {fileID: 100000, guid: 8022c42e98ac7354a9f7d60c84239039, type: 3}
@@ -5496,6 +5511,21 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!208 &578375940
+NavMeshObstacle:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 578375937}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Shape: 1
+  m_Extents: {x: 0.125, y: 0.21, z: 0.285}
+  m_MoveThreshold: 0.1
+  m_Carve: 0
+  m_CarveOnlyStationary: 1
+  m_Center: {x: 0, y: 0, z: 0.22}
+  m_TimeToStationary: 0.5
 --- !u!4 &579769315 stripped
 Transform:
   m_PrefabParentObject: {fileID: 400008, guid: abdf2f6c2adceb6448d8d52d687bc2b2, type: 3}
@@ -7186,6 +7216,21 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!208 &732551180
+NavMeshObstacle:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 732551177}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Shape: 1
+  m_Extents: {x: 0.125, y: 0.21, z: 0.285}
+  m_MoveThreshold: 0.1
+  m_Carve: 0
+  m_CarveOnlyStationary: 1
+  m_Center: {x: 0, y: 0, z: 0.22}
+  m_TimeToStationary: 0.5
 --- !u!1001 &739474364
 Prefab:
   m_ObjectHideFlags: 0
@@ -7281,6 +7326,21 @@ MeshCollider:
   m_InflateMesh: 0
   m_SkinWidth: 0.01
   m_Mesh: {fileID: 4300000, guid: 8849ad32cf960a444b6798bc21dbfa84, type: 3}
+--- !u!208 &739474368
+NavMeshObstacle:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 739474365}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Shape: 1
+  m_Extents: {x: 3.0000002, y: 1.5000001, z: 1}
+  m_MoveThreshold: 0.1
+  m_Carve: 0
+  m_CarveOnlyStationary: 1
+  m_Center: {x: 0, y: 0.5, z: 1}
+  m_TimeToStationary: 0.5
 --- !u!1001 &752346110
 Prefab:
   m_ObjectHideFlags: 0
@@ -8828,7 +8888,7 @@ Prefab:
       objectReference: {fileID: 1619047438}
     - target: {fileID: 1411374129933830, guid: c6a8282e1ac8f5a45bd53085752dc0f2, type: 2}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: c6a8282e1ac8f5a45bd53085752dc0f2, type: 2}
@@ -9645,6 +9705,21 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!208 &1038098520
+NavMeshObstacle:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1038098517}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Shape: 1
+  m_Extents: {x: 3.0000002, y: 1.5000001, z: 1}
+  m_MoveThreshold: 0.1
+  m_Carve: 0
+  m_CarveOnlyStationary: 1
+  m_Center: {x: 0, y: 0.5, z: 1}
+  m_TimeToStationary: 0.5
 --- !u!1001 &1038370846
 Prefab:
   m_ObjectHideFlags: 0
@@ -10538,6 +10613,21 @@ MeshCollider:
   m_InflateMesh: 0
   m_SkinWidth: 0.01
   m_Mesh: {fileID: 4300000, guid: 8849ad32cf960a444b6798bc21dbfa84, type: 3}
+--- !u!208 &1125454607
+NavMeshObstacle:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1125454604}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Shape: 1
+  m_Extents: {x: 3.0000002, y: 1.5000001, z: 1}
+  m_MoveThreshold: 0.1
+  m_Carve: 0
+  m_CarveOnlyStationary: 1
+  m_Center: {x: 0, y: 0.5, z: 1}
+  m_TimeToStationary: 0.5
 --- !u!1001 &1129537948
 Prefab:
   m_ObjectHideFlags: 0
@@ -11367,6 +11457,21 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!208 &1176325057
+NavMeshObstacle:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1176325054}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Shape: 1
+  m_Extents: {x: 0.125, y: 0.21, z: 0.285}
+  m_MoveThreshold: 0.1
+  m_Carve: 0
+  m_CarveOnlyStationary: 1
+  m_Center: {x: 0, y: 0, z: 0.22}
+  m_TimeToStationary: 0.5
 --- !u!1001 &1179887434
 Prefab:
   m_ObjectHideFlags: 0
@@ -11684,6 +11789,21 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!208 &1226806035
+NavMeshObstacle:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1226806032}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Shape: 1
+  m_Extents: {x: 0.125, y: 0.21, z: 0.285}
+  m_MoveThreshold: 0.1
+  m_Carve: 0
+  m_CarveOnlyStationary: 1
+  m_Center: {x: 0, y: 0, z: 0.22}
+  m_TimeToStationary: 0.5
 --- !u!1 &1227100939
 GameObject:
   m_ObjectHideFlags: 0
@@ -12592,6 +12712,21 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.25, y: 0.4, z: 0.56}
   m_Center: {x: 0, y: 0, z: 0.22}
+--- !u!208 &1325251332
+NavMeshObstacle:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1325251329}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Shape: 1
+  m_Extents: {x: 0.125, y: 0.21, z: 0.285}
+  m_MoveThreshold: 0.1
+  m_Carve: 0
+  m_CarveOnlyStationary: 1
+  m_Center: {x: 0, y: 0, z: 0.22}
+  m_TimeToStationary: 0.5
 --- !u!1001 &1328959032
 Prefab:
   m_ObjectHideFlags: 0
@@ -16462,6 +16597,21 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!208 &1745658344
+NavMeshObstacle:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1745658341}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Shape: 1
+  m_Extents: {x: 3.0000002, y: 1.5000001, z: 1}
+  m_MoveThreshold: 0.1
+  m_Carve: 0
+  m_CarveOnlyStationary: 1
+  m_Center: {x: 0, y: 0.5, z: 1}
+  m_TimeToStationary: 0.5
 --- !u!1001 &1775256787
 Prefab:
   m_ObjectHideFlags: 0
@@ -18068,6 +18218,21 @@ MeshCollider:
   m_InflateMesh: 0
   m_SkinWidth: 0.01
   m_Mesh: {fileID: 4300000, guid: f15f68db2d9e392448cc481d905c9cef, type: 3}
+--- !u!208 &1917861813
+NavMeshObstacle:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1917861810}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Shape: 1
+  m_Extents: {x: 0.32700002, y: 0.286, z: 0.28}
+  m_MoveThreshold: 0.1
+  m_Carve: 0
+  m_CarveOnlyStationary: 1
+  m_Center: {x: -0.10300001, y: 0, z: 0.18200001}
+  m_TimeToStationary: 0.5
 --- !u!1 &1927952406 stripped
 GameObject:
   m_PrefabParentObject: {fileID: 100000, guid: 16168cc558f93f34e81e4b54c1b2ed3a, type: 3}
@@ -18099,6 +18264,21 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.25, y: 0.4, z: 0.56}
   m_Center: {x: 0, y: 0, z: 0.22}
+--- !u!208 &1927952409
+NavMeshObstacle:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1927952406}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Shape: 1
+  m_Extents: {x: 0.125, y: 0.21, z: 0.285}
+  m_MoveThreshold: 0.1
+  m_Carve: 0
+  m_CarveOnlyStationary: 1
+  m_Center: {x: 0, y: 0, z: 0.22}
+  m_TimeToStationary: 0.5
 --- !u!1 &1939715072
 GameObject:
   m_ObjectHideFlags: 0
@@ -20382,6 +20562,21 @@ MeshCollider:
   m_InflateMesh: 0
   m_SkinWidth: 0.01
   m_Mesh: {fileID: 4300000, guid: f15f68db2d9e392448cc481d905c9cef, type: 3}
+--- !u!208 &2133713391
+NavMeshObstacle:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 2133713388}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Shape: 1
+  m_Extents: {x: 0.32700002, y: 0.286, z: 0.28}
+  m_MoveThreshold: 0.1
+  m_Carve: 0
+  m_CarveOnlyStationary: 1
+  m_Center: {x: -0.10300001, y: 0, z: 0.18200001}
+  m_TimeToStationary: 0.5
 --- !u!1001 &2134437376
 Prefab:
   m_ObjectHideFlags: 0
