@@ -6,16 +6,16 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scene/Buiding B&D Scene's/Building B&D.unity
+    path: Assets/Scene/Building B&D Scene's/Building B&D.unity
     guid: 69f1e9f40d3a518479b00cd674079002
   - enabled: 1
-    path: Assets/Scene/Buiding B&D Scene's/Building B&D B1.unity
+    path: Assets/Scene/Building B&D Scene's/Building B&D B1.unity
     guid: 44e8f27ff38b05a4d9cfa26d63dac787
   - enabled: 1
-    path: Assets/Scene/Buidling D Scene's/Building D B2.unity
+    path: Assets/Scene/Building D Scene's/Building D B2.unity
     guid: a2bd2ea9f3de79b47959251913548078
   - enabled: 1
-    path: Assets/Scene/Buidling D Scene's/Building D F1.unity
+    path: Assets/Scene/Building D Scene's/Building D F1.unity
     guid: e3aab1c8bae28fb48ba3012048057d7f
   - enabled: 1
     path: Assets/Scene/Building A Scene's/Building A F1&F2.unity
