@@ -14,8 +14,8 @@ OcclusionCullingSettings:
 RenderSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 8
-  m_Fog: 0
-  m_FogColor: {r: 0.5, g: 0.5, b: 0.5, a: 1}
+  m_Fog: 1
+  m_FogColor: {r: 0, g: 0, b: 0, a: 1}
   m_FogMode: 3
   m_FogDensity: 0.01
   m_LinearFogStart: 0
@@ -145,12 +145,16 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: bd6cd36ee02816743bb0537abc8dee99, type: 3}
       propertyPath: m_RootOrder
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 100004, guid: bd6cd36ee02816743bb0537abc8dee99, type: 3}
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 2300002, guid: bd6cd36ee02816743bb0537abc8dee99, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 742b0d3842117034dba389a6195546b9, type: 2}
     m_RemovedComponents:
     - {fileID: 9500000, guid: bd6cd36ee02816743bb0537abc8dee99, type: 3}
   m_ParentPrefab: {fileID: 100100000, guid: bd6cd36ee02816743bb0537abc8dee99, type: 3}
@@ -188,7 +192,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!108 &1036660484
 Light:
   m_ObjectHideFlags: 0
@@ -265,7 +269,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4297410304403082, guid: c6a8282e1ac8f5a45bd53085752dc0f2, type: 2}
       propertyPath: m_LocalPosition.y
-      value: 5
+      value: 0.17
       objectReference: {fileID: 0}
     - target: {fileID: 4297410304403082, guid: c6a8282e1ac8f5a45bd53085752dc0f2, type: 2}
       propertyPath: m_LocalPosition.z
@@ -291,6 +295,11 @@ Prefab:
       propertyPath: m_RootOrder
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 114141734048564320, guid: c6a8282e1ac8f5a45bd53085752dc0f2,
+        type: 2}
+      propertyPath: player
+      value: 
+      objectReference: {fileID: 2129268593}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: c6a8282e1ac8f5a45bd53085752dc0f2, type: 2}
   m_IsPrefabParent: 0
@@ -336,3 +345,7 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 5e9e851c0e142814dac026a256ba2ac0, type: 2}
   m_IsPrefabParent: 0
+--- !u!1 &2129268593 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 100000, guid: 5e9e851c0e142814dac026a256ba2ac0, type: 2}
+  m_PrefabInternal: {fileID: 1819234354}

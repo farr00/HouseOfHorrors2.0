@@ -26,7 +26,7 @@ public class TransitionScript : MonoBehaviour
 	{
 
 		//Assign the transition target location.
-		GlobalControl.Instance.TransitionTarget.position = TargetPlayerLocation.position;
+//		GlobalControl.Instance.TransitionTarget.position = TargetPlayerLocation.position;
 
 		//Do important stuff :D 
 		Application.LoadLevel(TargetedSceneIndex);
